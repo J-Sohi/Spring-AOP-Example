@@ -26,7 +26,13 @@
 	<bean id="la" class="com.fdmgroup.aspect.LoggingAspect" />
 	
 	<aop:config>
-	
+		<aop:pointcut expression="execution (* com.fdmgroup.service.ShoppingCart.*(..))" id="p1"/>
+		<aop:pointcut expression="execution (* com.fdmgroup.service.ShoppingCart.removeAll())" id="p2"/>
+		<aop:aspect ref="la">
+			<aop:before method="logBefore" pointcut-ref="p1" />
+			<aop:after method="logAfter" pointcut-ref="p1" />
+			<aop:after-throwing method="logAfterThrowing" pointcut-ref="p2" />
+		</aop:aspect>
 	</aop:config>
 	
 </beans>
