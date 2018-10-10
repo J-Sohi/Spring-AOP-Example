@@ -14,7 +14,7 @@ public class ShoppingCart {
 		System.out.println("Removing all of the" + name + " from the cart.");
 	}
 	
-	public void removeAll(String name) throws Exception{
+	public void removeAll() throws Exception{
 		System.out.println("Removing everything from the cart.");
 		throw new Exception("Generic Exception");
 	}

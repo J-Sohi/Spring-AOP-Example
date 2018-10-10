@@ -16,5 +16,14 @@ public class MainApp {
 		
 		System.out.println("===============================================");
 		
+		try {
+			sc.removeAll();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		System.out.println("===============================================");
+		sc.loop();
+		
 	}
 }
